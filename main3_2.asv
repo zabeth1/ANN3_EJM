@@ -1,0 +1,15 @@
+pict=load('./pict.dat');
+pict = reshape(pict, [1024,11])';
+X=[pict(1,:); pict(2,:); pict(3,:)];
+W = compute_weights(X);
+
+% preparation for the plotting of the figures
+n = sqrt(length(pict));
+
+xrange = linspace(0,1,n);
+[xx1, xx2] = meshgrid(xrange,xrange);
+XGrid = [xx1(:) xx2(:)];
+
+figure()
+hold on
+gscatter(XGrid(:,1), XGrid(:,2), pict(2,:),'LineWidth',3)
