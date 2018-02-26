@@ -13,7 +13,7 @@ XGrid = [xx1(:) xx2(:)];
 % Computations
 X=[pict(1,:); pict(2,:); pict(3,:)];
 W = compute_weights(X);
-pict_after = find_convergence(pict(10,:),W,1);
+pict_after = find_convergence(pict(11,:),W,0);
 
 %Plotting
 figure()   % plotting of the original figure

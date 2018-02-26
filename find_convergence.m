@@ -19,17 +19,17 @@ while any(X(:)~=Y(:))
     if mode == 0
         Y=update_rule(X,W);
     else
-        for i = 1:100
+        for i = 1:1000
             Y = update_sequential(Y,W);
         end
     
-    
+    end
     disp(cptr)
     g=gscatter(XGrid(:,1), XGrid(:,2),X,[0.9 0.9 0.9;0.1 0.1 0.1]);
     g(1).MarkerSize=30;
     g(2).MarkerSize=30;
     pause(0.2)
-    end
+    
     
     cptr= cptr + 1;
     
