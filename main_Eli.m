@@ -12,7 +12,7 @@ W = compute_weights(X);
 attractors=[];
 for ii=1:10000
     x=sign(randn(1,8));
-    y=find_convergence(x,W);
+    y=find_convergence(x,W,0);
     if isempty(attractors) || not(ismember(y,attractors,'rows'))
         attractors = [attractors;y];
     end

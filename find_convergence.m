@@ -22,18 +22,23 @@ while any(X(:)~=Y(:))
         for i = 1:100
             Y = update_sequential(Y,W);
         end
-    end
+    
     
     disp(cptr)
     g=gscatter(XGrid(:,1), XGrid(:,2),X,[0.9 0.9 0.9;0.1 0.1 0.1]);
     g(1).MarkerSize=30;
     g(2).MarkerSize=30;
-    pause(1)
+    pause(0.2)
+    end
+    
     cptr= cptr + 1;
+    
 end
-g=gscatter(XGrid(:,1), XGrid(:,2), Y,[0.9 0.9 0.9;0.1 0.1 0.1]);
-g(1).MarkerSize=30;
-g(2).MarkerSize=30;
-title('Final figure')
+if mode==1
+    g=gscatter(XGrid(:,1), XGrid(:,2), Y,[0.9 0.9 0.9;0.1 0.1 0.1]);
+    g(1).MarkerSize=30;
+    g(2).MarkerSize=30;
+    title('Final figure')
+end
 end
 
