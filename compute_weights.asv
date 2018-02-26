@@ -4,5 +4,9 @@ function [ W ] = compute_weights( X )
 W = X'*X;
 W=W-eye(size(W)).*diag(W);
 
+% for ii = 1:length(W)
+%     W(ii,ii)=0;
+% end
+
 end
 
