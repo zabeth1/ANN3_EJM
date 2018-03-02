@@ -13,7 +13,7 @@ Y = X;
 X=zeros(size(X));
 cptr = 0; %counts the number of iterations
 energy= [-Y*W*Y']; %energy of the system at each iteration
-while any(X(:)~=Y(:)) && cptr < 10000
+while any(X(:)~=Y(:)) && cptr < 100000
     X=Y;
     if mode == 0
         Y=update_rule(X,W);
@@ -26,19 +26,20 @@ while any(X(:)~=Y(:)) && cptr < 10000
                 g=gscatter(XGrid(:,1), XGrid(:,2),X,[0.9 0.9 0.9;0.1 0.1 0.1]);
                 g(1).MarkerSize=30;
                 g(2).MarkerSize=30;
-                pause(0.001)
+                drawnow
+%                 pause(0.001)
             end
             cptr= cptr + 1;
             energy= [energy;-Y*W*Y'];
         end
-<<<<<<< HEAD
     
     end
-    disp(cptr)
-    g=gscatter(XGrid(:,1), XGrid(:,2),X,[0.9 0.9 0.9;0.1 0.1 0.1]);
-    g(1).MarkerSize=30;
-    g(2).MarkerSize=30;
-    pause(0.2)
+%     disp(cptr)
+%     g=gscatter(XGrid(:,1), XGrid(:,2),X,[0.9 0.9 0.9;0.1 0.1 0.1]);
+%     g(1).MarkerSize=30;
+%     g(2).MarkerSize=30;
+%     drawnow
+%     pause(0.001)
     
     
     cptr= cptr + 1;
@@ -49,11 +50,9 @@ if mode==1
     g(1).MarkerSize=30;
     g(2).MarkerSize=30;
     title('Final figure')
-=======
-    end
       
->>>>>>> cfb1dd055fc900db7b695831667afd2c474934e4
 end
+% figure
 % plot(energy)
 end
 
